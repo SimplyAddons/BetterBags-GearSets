@@ -1,2 +1,2 @@
 # BetterBags: Gear Sets
-Extension for the [BetterBags](https://www.curseforge.com/wow/addons/better-bags) WoW addon, to categorize all items that are a part of an equipment set, into a single category named "Sets".
+Extension for the [BetterBags](https://www.curseforge.com/wow/addons/better-bags) WoW addon, to categorize all items that are a part of an equipment set, into a single category named "Gear Sets".
