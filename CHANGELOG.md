@@ -3,7 +3,7 @@
 - Rename category from "Sets" to "Gear Sets"
 
 # 1.0.1
-- Category will now update when equipment sets are updated
+- Category will now updated when equipment sets are saved
 - Category will now be reliably initialized on login
 
 # 1.0.0
