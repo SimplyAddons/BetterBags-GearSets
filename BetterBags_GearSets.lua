@@ -2,6 +2,8 @@
 local addon = LibStub('AceAddon-3.0'):GetAddon("BetterBags")
 ---@class Categories: AceModule
 local categories = addon:GetModule('Categories')
+---@class Localization: AceModule
+local L = addon:GetModule('Localization')
 -------------------------------------------------------
 local debug = false
 -------------------------------------------------------
