@@ -4,15 +4,16 @@ local addon = LibStub('AceAddon-3.0'):GetAddon("BetterBags")
 local categories = addon:GetModule('Categories')
 ---@class Localization: AceModule
 local L = addon:GetModule('Localization')
--------------------------------------------------------
+
+-- Debugging
 local debug = false
--------------------------------------------------------
 local function printChat(message)
    if debug then
       print("[BetterBags: Gear Sets] "..message)
    end
 end
--------------------------------------------------------
+
+-- Add all items in equipment sets to the "Gear Sets" category
 local function UpdateGearsets()
    local equipmentSetIDs = C_EquipmentSet.GetEquipmentSetIDs()
 
@@ -23,7 +24,7 @@ local function UpdateGearsets()
          for _, itemID in pairs(itemIDs) do
             if itemID and itemID > 0 then
                printChat("ID: " .. itemID)
-               categories:AddItemToCategory(itemID, "Sets")
+               categories:AddItemToCategory(itemID, "Gear Sets")
             else
                printChat("Invalid or missing item in Set " .. i .. ". ItemID: " .. tostring(itemID))
             end
