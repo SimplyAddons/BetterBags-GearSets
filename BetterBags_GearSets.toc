@@ -1,0 +1,10 @@
+## Interface: 110000
+## Title: BetterBags - Gear Sets
+## Notes: Category for saved gear/equipment sets.
+## Author: SimplyAddons
+## Version: @project-version@
+## Dependencies: BetterBags
+## IconTexture: Interface\AddOns\BetterBags_GearSets\BetterBags.blp
+## X-Curse-Project-ID: 1082872
+
+main.lua
