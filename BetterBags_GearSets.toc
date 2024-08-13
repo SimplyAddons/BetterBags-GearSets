@@ -1,4 +1,4 @@
-## Interface: 110000
+## Interface: 110002
 ## Title: BetterBags - Gear Sets
 ## Notes: Category for saved gear/equipment sets.
 ## Author: SimplyAddons

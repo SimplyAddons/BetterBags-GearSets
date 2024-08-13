@@ -1,3 +1,6 @@
+# 1.0.3
+- Bump TOC to 11.0.2
+
 # 1.0.2
 - Resolves an error when a gear set contains an empty slot or invalid item
 - Rename category from "Sets" to "Gear Sets"
