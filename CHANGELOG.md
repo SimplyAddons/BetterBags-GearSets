@@ -1,3 +1,8 @@
+# 1.0.4
+- Improved category initalization on login
+- Register plugin with BetterBags
+- Add localization support for French, Portuguese and Spanish
+
 # 1.0.3
 - Bump TOC to 11.0.2
 
