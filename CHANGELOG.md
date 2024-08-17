@@ -1,3 +1,6 @@
+# 1.0.5
+- Wipe category to clear old set items before re-populating
+
 # 1.0.4
 - Improved category initalization on login
 - Register plugin with BetterBags

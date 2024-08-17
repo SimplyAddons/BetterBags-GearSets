@@ -51,6 +51,8 @@ end
 local function UpdateGearsets()
    if not isLoaded then return end
 
+   Categories:WipeCategory(L:G("Gear Sets"))
+
    local equipmentSetIDs = C_EquipmentSet.GetEquipmentSetIDs()
 
    for _, i in pairs(equipmentSetIDs) do
