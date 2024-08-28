@@ -15,7 +15,7 @@ local Categories = BetterBags:GetModule('Categories')
 local Config = BetterBags:GetModule('Config')
 
 ---@class Localization: AceModule
----@field G fun(self: AceModule, key: string): string
+---@field G fun(self: AceModule, key: string, colorize?: boolean): string
 local L = BetterBags:GetModule('Localization')
 
 -- Localization
@@ -41,9 +41,13 @@ local i18n = {
       ["GearSetsDescription"] = "Este plugin categoriza todos los elementos que forman parte de un conjunto de equipo en una sola categoría llamada \"Conjuntos\".\n\nActualmente, no hay opciones configurables para este plugin."
    },
 }
-function L:G(key)
+function L:G(key, colorize)
    local locale = GetLocale()
    local translation = i18n[locale] and i18n[locale][key]
+   colorize = colorize or false
+   if colorize then
+      translation = "|cff88AAFF" .. translation .. "|r"
+   end
    return translation or key
 end
 
@@ -51,7 +55,7 @@ end
 local function UpdateGearsets()
    if not isLoaded then return end
 
-   Categories:WipeCategory(L:G("Gear Sets"))
+   Categories:WipeCategory(L:G("Gear Sets", true))
 
    local equipmentSetIDs = C_EquipmentSet.GetEquipmentSetIDs()
 
@@ -60,7 +64,7 @@ local function UpdateGearsets()
       if itemIDs then
          for _, itemID in pairs(itemIDs) do
             if itemID and itemID > 0 then
-               Categories:AddItemToCategory(itemID, L:G("Gear Sets"))
+               Categories:AddItemToCategory(itemID, L:G("Gear Sets", true))
             end
          end
       end
