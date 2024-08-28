@@ -1,3 +1,6 @@
+# 1.0.6
+- Colorize the category label
+
 # 1.0.5
 - Wipe category to clear old set items before re-populating
 
