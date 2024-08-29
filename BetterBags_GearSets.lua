@@ -1,5 +1,6 @@
 ---@type string
 local addonName = ...
+local locale = GetLocale() or "enUS"
 
 ---@type boolean
 local isLoaded = false
@@ -14,9 +15,9 @@ local Categories = BetterBags:GetModule('Categories')
 ---@class Config: AceModule
 local Config = BetterBags:GetModule('Config')
 
----@class Localization: AceModule
----@field G fun(self: AceModule, key: string, colorize?: boolean): string
-local L = BetterBags:GetModule('Localization')
+--@class Localization: AceModule
+--@field G fun(self: AceModule, key: string, colorize?: boolean): string
+--local L = BetterBags:GetModule('Localization')
 
 -- Localization
 local i18n = {
@@ -41,8 +42,7 @@ local i18n = {
       ["GearSetsDescription"] = "Este plugin categoriza todos los elementos que forman parte de un conjunto de equipo en una sola categoría llamada \"Conjuntos\".\n\nActualmente, no hay opciones configurables para este plugin."
    },
 }
-function L:G(key, colorize)
-   local locale = GetLocale()
+local function translate(key, colorize)
    local translation = i18n[locale] and i18n[locale][key]
    colorize = colorize or false
    if colorize then
@@ -55,7 +55,7 @@ end
 local function UpdateGearsets()
    if not isLoaded then return end
 
-   Categories:WipeCategory(L:G("Gear Sets", true))
+   Categories:WipeCategory(translate("Gear Sets", true))
 
    local equipmentSetIDs = C_EquipmentSet.GetEquipmentSetIDs()
 
@@ -64,7 +64,7 @@ local function UpdateGearsets()
       if itemIDs then
          for _, itemID in pairs(itemIDs) do
             if itemID and itemID > 0 then
-               Categories:AddItemToCategory(itemID, L:G("Gear Sets", true))
+               Categories:AddItemToCategory(itemID, translate("Gear Sets", true))
             end
          end
       end
@@ -91,17 +91,17 @@ end)
 local options = {
    GearSetsOptions = {
       type = "group",
-      name = L:G("Gear Sets"),
+      name = translate("Gear Sets"),
       order = 0,
       inline = true,
       args = {
          description = {
             type = "description",
             order = 0,
-            name = L:G("GearSetsDescription"),
+            name = translate("GearSetsDescription"),
             fontSize = "large",
          },
       }
    }
 }
-Config:AddPluginConfig(L:G("Gear Sets"), options)
+Config:AddPluginConfig(translate("Gear Sets"), options)

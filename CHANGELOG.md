@@ -1,3 +1,7 @@
+# 1.0.7
+- Improved localization performance
+- Default to "enUS" for unsupported languages
+
 # 1.0.6
 - Colorize the category label
 
